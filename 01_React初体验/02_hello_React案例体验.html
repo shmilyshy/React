@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 1.添加依赖(需要添加3个包,各司其职) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.querySelector("#root"))
+    
+      // 1.将文本定义成变量
+      let message = "Hello World"
+    
+      function btnClick() {
+        message = "Hello React"
+        root.render(
+          <div>
+            {message}
+            <button onClick={btnClick}>修改文本</button>
+          </div>
+        )
+      }
+    
+      root.render(
+        <div>
+          {message}
+          <button onClick={btnClick}>修改文本</button>
+        </div>
+      )
+    </script>
+  </body>
+</html>
